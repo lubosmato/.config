@@ -1,0 +1,7 @@
+-- TODO: configure neotest - add adapters
+
+-- require("neotest").setup({
+--   adapters = {
+--     require("neotest-rust"),
+--   },
+-- })
