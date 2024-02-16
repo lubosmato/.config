@@ -1,43 +1,19 @@
--- since this is just an example spec, don't actually load anything here and return an empty spec
--- stylua: ignore
-if true then return {} end
-
--- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
---
--- In your plugin files, you can:
--- * add extra plugins
--- * disable/enabled LazyVim plugins
--- * override the configuration of LazyVim plugins
 return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
-
-  -- Configure LazyVim to load gruvbox
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
-
-  -- change trouble config
-  {
+    -- change trouble config {
     "folke/trouble.nvim",
     -- opts will be merged with the parent spec
     opts = { use_diagnostic_signs = true },
   },
-
   -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
-
+  -- { "folke/trouble.nvim", enabled = false },
   -- add symbols-outline
   {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
-    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+    keys = { { "<leader>co", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
     config = true,
   },
-
   -- override nvim-cmp and add cmp-emoji
   {
     "hrsh7th/nvim-cmp",
@@ -47,7 +23,6 @@ return {
       table.insert(opts.sources, { name = "emoji" })
     end,
   },
-
   -- change some telescope options and a keymap to browse plugin files
   {
     "nvim-telescope/telescope.nvim",
@@ -70,19 +45,17 @@ return {
       },
     },
   },
-
   -- add telescope-fzf-native
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
-    },
-  },
-
+  -- {
+  --   "telescope.nvim",
+  --   dependencies = {
+  --     "nvim-telescope/telescope-fzf-native.nvim",
+  --     build = "make",
+  --     config = function()
+  --       require("telescope").load_extension("fzf")
+  --     end,
+  --   },
+  -- },
   -- add pyright to lspconfig
   {
     "neovim/nvim-lspconfig",
@@ -95,7 +68,6 @@ return {
       },
     },
   },
-
   -- add tsserver and setup with typescript.nvim instead of lspconfig
   {
     "neovim/nvim-lspconfig",
@@ -104,7 +76,7 @@ return {
       init = function()
         require("lazyvim.util").lsp.on_attach(function(_, buffer)
           -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+          vim.keymap.set("n", "<leader>ci", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
           vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
         end)
       end,
@@ -130,11 +102,9 @@ return {
       },
     },
   },
-
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
   { import = "lazyvim.plugins.extras.lang.typescript" },
-
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
@@ -144,6 +114,18 @@ return {
         "html",
         "javascript",
         "json",
+        "csv",
+        "dart",
+        "graphql",
+        "http",
+        "java",
+        "json",
+        "rust",
+        "toml",
+        "cpp",
+        "gitignore",
+        "gitcommit",
+        "css",
         "lua",
         "markdown",
         "markdown_inline",
@@ -157,7 +139,6 @@ return {
       },
     },
   },
-
   -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
   -- would overwrite `ensure_installed` with the new value.
   -- If you'd rather extend the default config, use the code below instead:
@@ -171,7 +152,6 @@ return {
       })
     end,
   },
-
   -- the opts function can also be used to change the default opts:
   {
     "nvim-lualine/lualine.nvim",
@@ -180,7 +160,6 @@ return {
       table.insert(opts.sections.lualine_x, "😄")
     end,
   },
-
   -- or you can return new options to override all the defaults
   {
     "nvim-lualine/lualine.nvim",
@@ -191,13 +170,10 @@ return {
       }
     end,
   },
-
   -- use mini.starter instead of alpha
-  { import = "lazyvim.plugins.extras.ui.mini-starter" },
-
+  -- { import = "lazyvim.plugins.extras.ui.mini-starter" },
   -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
   { import = "lazyvim.plugins.extras.lang.json" },
-
   -- add any tools you want to have installed below
   {
     "williamboman/mason.nvim",
@@ -210,7 +186,6 @@ return {
       },
     },
   },
-
   -- Use <tab> for completion and snippets (supertab)
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
   {
@@ -240,8 +215,8 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
-            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-            -- this way you will only jump inside the snippet region
+          -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+          -- this way you will only jump inside the snippet region
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
           elseif has_words_before() then
