@@ -9,3 +9,5 @@ end
 
 -- map("n", "<leader>se", telescope("lsp_references()"), { noremap = true, silent = true, desc = "Find References" })
 map("n", "<leader>ct", "<cmd>ToggleTerm<cr>", { noremap = true, silent = true, desc = "Terminal Toggle" })
+
+map("n", "<leader>fs", "<cmd>Telescope session-lens<cr>", { noremap = true, silent = true, desc = "Sessions" })

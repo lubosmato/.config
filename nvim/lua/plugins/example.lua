@@ -11,7 +11,7 @@ return {
   {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
-    keys = { { "<leader>co", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
     config = true,
   },
   -- override nvim-cmp and add cmp-emoji
@@ -29,11 +29,11 @@ return {
     keys = {
       -- add a keymap to browse plugin files
       -- stylua: ignore
-      {
-        "<leader>fp",
-        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
-        desc = "Find Plugin File",
-      },
+      -- {
+      --   "<leader>fp",
+      --   function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
+      --   desc = "Find Plugin File",
+      -- },
     },
     -- change some options
     opts = {
@@ -125,6 +125,8 @@ return {
         "cpp",
         "gitignore",
         "gitcommit",
+        "svelte",
+        "scss",
         "css",
         "lua",
         "markdown",
@@ -239,4 +241,5 @@ return {
   },
 
   { "akinsho/toggleterm.nvim", version = "*", config = true },
+  { "rmagatti/auto-session", config = true },
 }
