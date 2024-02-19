@@ -1,13 +1,19 @@
 return {
   {
+    "pocco81/auto-save.nvim",
+    opts = function(opts)
+      opts.enabled = true
+      opts.debounce_delay = 500
+    end,
+  },
+  -- trouble
+  {
     -- change trouble config {
     "folke/trouble.nvim",
     -- opts will be merged with the parent spec
     opts = { use_diagnostic_signs = true },
   },
-  -- disable trouble
-  -- { "folke/trouble.nvim", enabled = false },
-  -- add symbols-outline
+  -- symbols outline
   {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
@@ -159,17 +165,7 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, "😄")
-    end,
-  },
-  -- or you can return new options to override all the defaults
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return {
-        --[[add your custom lualine config here]]
-      }
+      table.insert(opts.sections.lualine_x, "tabs")
     end,
   },
   -- use mini.starter instead of alpha
@@ -185,6 +181,31 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
+        "checkstyle",
+        "clang-format",
+        "clangd",
+        "codelldb",
+        "css-lsp",
+        "deno",
+        "flake8",
+        "html-lsp",
+        "java-debug-adapter",
+        "java-language-server",
+        "java-test",
+        "json-lsp",
+        "lua-language-server",
+        "marksman",
+        "prettier",
+        "pyright",
+        "rust-analyzer",
+        "shellcheck",
+        "shfmt",
+        "sonarlint-language-server",
+        "stylua",
+        "svelte-language-server",
+        "tailwindcss-language-server",
+        "taplo",
+        "typescript-language-server",
       },
     },
   },
