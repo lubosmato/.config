@@ -167,8 +167,40 @@ return {
       table.insert(opts.sections.lualine_x, "tabs")
     end,
   },
-  -- use mini.starter instead of alpha
-  { import = "lazyvim.plugins.extras.ui.mini-animate", opts = {} },
+  {
+    "echasnovski/mini.animate",
+    event = "VeryLazy",
+    opts = function()
+      -- don't use animate when scrolling with the mouse
+      local mouse_scrolled = false
+      for _, scroll in ipairs({ "Up", "Down" }) do
+        local key = "<ScrollWheel" .. scroll .. ">"
+        vim.keymap.set({ "", "i" }, key, function()
+          mouse_scrolled = true
+          return key
+        end, { expr = true })
+      end
+
+      local animate = require("mini.animate")
+      return {
+        resize = {
+          timing = animate.gen_timing.linear({ duration = 50, unit = "total" }),
+        },
+        scroll = {
+          timing = animate.gen_timing.linear({ duration = 50, unit = "total" }),
+          subscroll = animate.gen_subscroll.equal({
+            predicate = function(total_scroll)
+              if mouse_scrolled then
+                mouse_scrolled = false
+                return false
+              end
+              return total_scroll > 1
+            end,
+          }),
+        },
+      }
+    end,
+  },
   --{ import = "lazyvim.plugins.extras.ui.mini-starter" },
   -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
   { import = "lazyvim.plugins.extras.lang.json" },
