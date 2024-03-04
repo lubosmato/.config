@@ -3,7 +3,9 @@ return {
     "okuuva/auto-save.nvim",
     cmd = "ASToggle",
     event = { "InsertLeave" },
-    opts = {},
+    opts = {
+      debounce_delay = 2000,
+    },
   },
   -- trouble
   {
@@ -102,6 +104,14 @@ return {
           require("typescript").setup({ server = opts })
           return true
         end,
+        eslint = function(_, opts)
+          opts.on_attach = function(_, bufnr)
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              buffer = bufnr,
+              command = "EslintFixAll",
+            })
+          end
+        end,
         -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
       },
@@ -114,6 +124,9 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
+      matchup = {
+        enable = true,
+      },
       ensure_installed = {
         "bash",
         "html",
@@ -219,7 +232,6 @@ return {
         "codelldb",
         "css-lsp",
         "deno",
-        "flake8",
         "html-lsp",
         "java-debug-adapter",
         "java-language-server",
@@ -230,14 +242,15 @@ return {
         "prettier",
         "pyright",
         "rust-analyzer",
-        "shellcheck",
-        "shfmt",
         "sonarlint-language-server",
-        "stylua",
         "svelte-language-server",
         "tailwindcss-language-server",
         "taplo",
         "typescript-language-server",
+        "eslint-lsp",
+        "stylua",
+        "tailwindcss-language-server",
+        "taplo",
       },
     },
   },
@@ -292,7 +305,10 @@ return {
       })
     end,
   },
-
+  { "akinsho/git-conflict.nvim", version = "*", config = true },
   { "akinsho/toggleterm.nvim", version = "*", config = true },
   { "rmagatti/auto-session", config = true },
+  { "mg979/vim-visual-multi" },
+  { "andymass/vim-matchup" },
+  { "github/copilot.vim" },
 }

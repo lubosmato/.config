@@ -11,3 +11,7 @@ end
 map("n", "<leader>ct", "<cmd>ToggleTerm<cr>", { noremap = true, silent = true, desc = "Terminal Toggle" })
 
 map("n", "<leader>fs", "<cmd>Telescope session-lens<cr>", { noremap = true, silent = true, desc = "Sessions" })
+
+-- copilot
+map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
+vim.g.copilot_no_tab_map = true
