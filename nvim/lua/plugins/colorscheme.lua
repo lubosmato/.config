@@ -1,5 +1,5 @@
 return {
-  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+  { "lubosmato/vim-moonfly2-colors", name = "moonfly2", lazy = false },
   {
     "LazyVim/LazyVim",
     opts = {

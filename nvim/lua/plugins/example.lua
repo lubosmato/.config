@@ -41,6 +41,13 @@ return {
       --   function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
       --   desc = "Find Plugin File",
       -- },
+      {
+        "<leader>ff",
+        function()
+          require("telescope.builtin").git_files()
+        end,
+        desc = "Find Files (git-files)",
+      },
     },
     -- change some options
     opts = {
@@ -201,7 +208,7 @@ return {
           timing = animate.gen_timing.linear({ duration = 50, unit = "total" }),
         },
         scroll = {
-          timing = animate.gen_timing.linear({ duration = 50, unit = "total" }),
+          timing = animate.gen_timing.linear({ duration = 30, unit = "total" }),
           subscroll = animate.gen_subscroll.equal({
             predicate = function(total_scroll)
               if mouse_scrolled then
@@ -321,6 +328,33 @@ return {
     config = function()
       require("nvim-surround").setup({
         -- Configuration here, or leave empty to use defaults
+      })
+    end,
+  },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    config = function()
+      require("nvim-highlight-colors").setup({
+        ---Render style
+        ---@usage 'background'|'foreground'|'virtual'
+        render = "background",
+
+        ---Set virtual symbol (requires render to be set to 'virtual')
+        virtual_symbol = "███",
+
+        ---Highlight named colors, e.g. 'green'
+        enable_named_colors = true,
+
+        ---Highlight tailwind colors, e.g. 'bg-blue-500'
+        enable_tailwind = true,
+
+        ---Set custom colors
+        ---Label must be properly escaped with '%' to adhere to `string.gmatch`
+        --- :help string.gmatch
+        custom_colors = {
+          { label = "%-%-theme%-primary%-color", color = "#0f1219" },
+          { label = "%-%-theme%-secondary%-color", color = "#5a5d64" },
+        },
       })
     end,
   },
