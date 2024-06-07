@@ -1,4 +1,5 @@
 return {
+  -- NOTE: had some troubles with luarocks installing lua-curl
   {
     "vhyrro/luarocks.nvim",
     priority = 1000,
