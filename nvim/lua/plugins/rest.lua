@@ -13,7 +13,15 @@ return {
     ft = "http",
     dependencies = { "luarocks.nvim" },
     config = function()
-      require("rest-nvim").setup()
+      require("rest-nvim").setup({
+        client = "curl",
+        skip_ssl_verification = false,
+        logs = { level = "info", save = true },
+        highlight = {
+          enabled = true,
+          timeout = 750,
+        },
+      })
     end,
   },
 }
