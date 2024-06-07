@@ -15,3 +15,7 @@ map("n", "<leader>fs", "<cmd>Telescope session-lens<cr>", { noremap = true, sile
 -- copilot
 map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
 vim.g.copilot_no_tab_map = true
+
+-- rest
+map("n", "<leader>rr", "<cmd>Rest run<cr>", { noremap = true, silent = true, desc = "Run request under the cursor" })
+map("n", "<leader>rl", "<cmd>Rest run last<cr>", { noremap = true, silent = true, desc = "Re-run latest request" })
