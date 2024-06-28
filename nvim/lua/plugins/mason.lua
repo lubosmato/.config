@@ -28,7 +28,7 @@ return {
         "svelte-language-server",
         "tailwindcss-language-server",
         "taplo",
-        "typescript-language-server",
+        "vtsls",
         "eslint-lsp",
       },
     },
