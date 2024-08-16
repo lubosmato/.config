@@ -36,13 +36,22 @@ return {
       {
         "<leader>ff",
         function()
-          require("telescope.builtin").git_files()
+          require("telescope.builtin").find_files({
+            opts = {
+              hidden = true,
+            },
+          })
         end,
-        desc = "Find Files (git-files)",
+        desc = "Find Files",
       },
     },
     -- change some options
     opts = {
+      pickers = {
+        find_files = {
+          hidden = true,
+        },
+      },
       defaults = {
         layout_strategy = "horizontal",
         layout_config = { prompt_position = "top" },
