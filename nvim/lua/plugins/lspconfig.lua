@@ -93,6 +93,13 @@ return {
             settings = {
               complete_function_calls = true,
               vtsls = {
+                tsserver = {
+                  globalPlugins = {
+                    {
+                      name = "@styled/typescript-styled-plugin",
+                    },
+                  },
+                },
                 javascript = { format = { indentSize = 2 } },
                 autoUseWorkspaceTsdk = true,
                 enableMoveToFileCodeAction = true,
