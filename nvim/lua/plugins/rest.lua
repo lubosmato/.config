@@ -23,6 +23,8 @@ return {
   --         timeout = 750,
   --       },
   --     })
+  --     vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", { noremap = true, silent = true, desc = "Run request under the cursor" })
+  --     vim.keymap.set("n", "<leader>rl", "<cmd>Rest run last<cr>", { noremap = true, silent = true, desc = "Re-run latest request" })
   --   end,
   -- },
 }
