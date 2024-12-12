@@ -2,4 +2,6 @@
 !.gitignore
 !nvim
 !karabiner
+!kitty
+!zellij
 
