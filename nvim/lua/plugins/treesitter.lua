@@ -36,6 +36,7 @@ return {
         "vim",
         "xml",
         "yaml",
+        "hyprlang",
       },
     },
   },
