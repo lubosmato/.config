@@ -115,9 +115,26 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   
-  fonts.packages = with pkgs; [
-    nerdfonts
-  ];
+  fonts = {
+    packages = with pkgs; [
+      nerdfonts
+    ];
+
+    fontconfig = {
+      antialias = true;
+
+      hinting = {
+        enable = true;
+        style = "full";
+        autohint = true;
+      };
+
+      subpixel = {
+        rgba = "rgb";
+        lcdfilter = "default";
+      };
+    };
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -130,6 +147,8 @@
      kitty
      lact
      fzf
+     telegram-desktop
+     wl-clipboard
   ];
 
   programs.git.enable = true;
