@@ -128,7 +128,7 @@
     {
       "name": "nvim",
       "placeholder": "Nvim Sessions",
-      "prefix": "c",
+      "prefix": "$",
       "terminal": true,
       "src_once": "ls -1 ~/.local/share/nvim/sessions",
       "refresh": true,
