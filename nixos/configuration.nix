@@ -10,6 +10,12 @@
       ./hardware-configuration.nix
     ];
 
+  # nix features
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -52,12 +58,9 @@
     enable = true;
     enable32Bit = true;
   };
-  
-  # VRR (but this does nothing):
-  services.xserver.deviceSection = ''
-    Option "TearFree" "False"
-    Option "VariableRefresh" "True"
-  '';
+
+  # numlock
+  services.xserver.displayManager.setupCommands = "/run/current-system/sw/bin/numlockx on\n";
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -120,45 +123,80 @@
       nerdfonts
     ];
 
-    fontconfig = {
-      antialias = true;
-
-      hinting = {
-        enable = true;
-        style = "full";
-        autohint = true;
-      };
-
-      subpixel = {
-        rgba = "rgb";
-        lcdfilter = "default";
-      };
-    };
+    # TODO: fonts are still ugly:
+    # 
+    # fontconfig = {
+    #   antialias = true;
+    #
+    #   hinting = {
+    #     enable = true;
+    #     style = "slight";
+    #     autohint = true;
+    #   };
+    #
+    #   subpixel = {
+    #     rgba = "rgb";
+    #     lcdfilter = "default";
+    #   };
+    # };
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     wget
-     htop
-     neovim
-     neofetch
-     lm_sensors
-     kitty
-     lact
-     fzf
-     telegram-desktop
-     wl-clipboard
+    # system tools
+    wget
+    htop
+    neofetch
+    lm_sensors
+    lact # amdgpu settings
+    fzf
+    git
+    numlockx
+    xdg-terminal-exec # select preferred terminal emulator
+
+    # apps
+    neovim
+    kitty
+    google-chrome
+    telegram-desktop
+    lazygit
+
+    # UI
+    walker # app launcher
+    wl-clipboard
   ];
 
-  programs.git.enable = true;
-  programs.lazygit.enable = true;
-  
   environment.variables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
     BROWSER = "firefox";
     TERMINAL = "kitty";
+  };
+  xdg.terminal-exec.enable = true;
+
+  programs.dconf.profiles.user = {
+    databases = [{
+      lockAll = true;
+      settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+          clock-format = "24h";
+          clock-show-weekday = true;
+          gtk-theme = "Adwaita-dark";
+          accent-color = "orange";
+        };
+        "org/gnome/desktop/peripherals/keyboard" = {
+          numlock-state = true;
+          remember-numlock-state = true;
+        };
+        "org/gnome/desktop/media-handling" = {
+          automount = true;
+          automount-open = true;
+          autorun-never = true;
+        };
+      };
+    }];
   };
   
   systemd.packages = with pkgs; [ lact ];
