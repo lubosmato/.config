@@ -123,5 +123,47 @@
     "history": true,
     "placeholder": "Search..."
   },
-  "theme": "catppuccin"
+  "theme": "catppuccin",
+  "plugins": [
+    {
+      "name": "nvim",
+      "placeholder": "Nvim Sessions",
+      "prefix": "c",
+      "terminal": true,
+      "src_once": "ls -1 ~/.local/share/nvim/sessions",
+      "refresh": true,
+      "cmd": "nvim -c \"$(echo \":source ~/.local/share/nvim/sessions/%RESULT%\" | sed -e 's/%/\\\\%/g')\""
+    },
+    {
+      "name": "power",
+      "placeholder": "Power",
+      "switcher_only": true,
+      "recalculate_score": true,
+      "show_icon_when_single": true,
+      "entries": [
+        {
+          "label": "Shutdown",
+          "icon": "system-shutdown",
+          "exec": "shutdown now"
+        },
+        {
+          "label": "Reboot",
+          "icon": "system-reboot",
+          "exec": "reboot"
+        },
+        {
+          "label": "Lock Screen",
+          "icon": "system-lock-screen",
+          "exec": "playerctl --all-players pause & hyprlock"
+        },
+        {
+          "name": "calc",
+          "prefix": "=",
+          "src": "NO_COLOR=\"true\" rink",
+          "cmd": "wl-copy",
+          "matching": 1
+        }
+      ]
+    }
+  ]
 }
