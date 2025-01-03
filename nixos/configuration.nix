@@ -59,9 +59,6 @@
     enable32Bit = true;
   };
 
-  # numlock
-  services.xserver.displayManager.setupCommands = "/run/current-system/sw/bin/numlockx on\n";
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -152,7 +149,6 @@
     lact # amdgpu settings
     fzf
     git
-    numlockx
     xdg-terminal-exec # select preferred terminal emulator
 
     # apps
@@ -165,6 +161,7 @@
     # UI
     walker # app launcher
     wl-clipboard
+    apple-cursor
   ];
 
   environment.variables = {
