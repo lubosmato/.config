@@ -150,6 +150,8 @@
     fzf
     git
     xdg-terminal-exec # select preferred terminal emulator
+    jq
+    killall
 
     # apps
     neovim
@@ -162,12 +164,19 @@
     walker # app launcher
     wl-clipboard
     apple-cursor
+    swaynotificationcenter
+    qt6.qtwayland
+    qt5.qtwayland
+    waybar
+
+    # dev
+    nodejs_22
   ];
 
   environment.variables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
-    BROWSER = "firefox";
+    BROWSER = "google-chrome";
     TERMINAL = "kitty";
   };
   xdg.terminal-exec.enable = true;
@@ -182,6 +191,8 @@
           clock-show-weekday = true;
           gtk-theme = "Adwaita-dark";
           accent-color = "orange";
+          cursor-size = "24";
+          cursor-theme = "macOS";
         };
         "org/gnome/desktop/peripherals/keyboard" = {
           numlock-state = true;
