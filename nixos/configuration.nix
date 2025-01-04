@@ -171,6 +171,8 @@
 
     # dev
     nodejs_22
+    gcc
+    clang
   ];
 
   environment.variables = {
