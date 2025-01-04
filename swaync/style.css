@@ -1,0 +1,229 @@
+* {
+  all: unset;
+  font-size: 16px;
+  font-family: "Overpass Nerd Font Propo, Thin";
+  transition: 200ms;
+}
+
+.control-center {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+  color: white;
+  padding: 1.25rem 1.5rem;
+}
+
+.control-center .widget-title > label {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.floating-notifications {
+  background: transparent;
+  padding: 0;
+}
+
+.notification {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  padding: 1rem;
+  margin: 0.5rem 1rem;
+}
+
+.image {
+  padding-right: 1rem;
+}
+
+button.close-button {
+  margin-right: 1.25rem;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+button.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.notification:last-child {
+  margin-bottom: 0;
+}
+
+.control-center .notification {
+  margin-right: 0;
+  margin-left: 0;
+  background: rgba(0, 0, 0, 1.0);
+}
+
+.widget-dnd > switch {
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.widget-dnd > switch:checked {
+  background: #de2834;
+}
+
+.widget-dnd > switch slider {
+  background: #0a0a0a;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.widget-dnd > switch slider:hover {
+  background: #202020;
+}
+
+button {
+  padding: 0.5rem;
+  margin: 0.5rem;
+
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 1.0);
+}
+
+.control-center .widget-title {
+  margin-bottom: 0.5rem;
+}
+
+.control-center .widget-title button {
+  border-radius: 6px;
+  padding: 0 0.6rem;
+}
+
+/*
+
+trough highlight {
+  background: #4c4f69;
+}
+
+scale trough {
+  margin: 0rem 1rem;
+  background-color: #ccd0da;
+  min-height: 8px;
+  min-width: 70px;
+}
+
+slider {
+  background-color: #1e66f5;
+}
+
+.control-center {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8), inset 0 0 0 1px #ccd0da;
+  border-radius: 12.6px;
+  margin: 18px;
+  background-color: #eff1f5;
+  color: #4c4f69;
+  padding: 14px;
+}
+
+.control-center .widget-title > label {
+  color: #4c4f69;
+  font-size: 1.3em;
+}
+
+.control-center .widget-title button {
+  border-radius: 7px;
+  color: #4c4f69;
+  background-color: blue;
+  box-shadow: inset 0 0 0 1px #bcc0cc;
+  padding: 8px;
+}
+
+.control-center .notification-row .notification-background {
+  border-radius: 7px;
+  color: #4c4f69;
+  background-color: #ccd0da;
+  box-shadow: inset 0 0 0 1px #bcc0cc;
+  margin-top: 14px;
+}
+
+.control-center .notification-row .notification-background .notification {
+  padding: 7px;
+  border-radius: 7px;
+}
+
+.control-center .notification-row .notification-background .notification.critical {
+  box-shadow: inset 0 0 7px 0 #d20f39;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
+  box-shadow: inset 0 0 0 1px #bcc0cc;
+  background-color: #209fb5;
+  color: #4c4f69;
+}
+
+.control-center .notification-row .notification-background .close-button {
+  margin: 7px;
+  padding: 2px;
+  border-radius: 6.3px;
+  color: #eff1f5;
+  background-color: #e64553;
+}
+
+.close-button {
+  border-radius: 6.3px;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  background-color: #d20f39;
+  color: #eff1f5;
+}
+
+.control-center .notification-row .notification-background .close-button:active {
+  background-color: #d20f39;
+  color: #eff1f5;
+}
+
+.control-center .notification-row .notification-background:hover {
+  box-shadow: inset 0 0 0 1px #bcc0cc;
+  background-color: #8c8fa1;
+  color: #4c4f69;
+}
+
+.control-center .notification-row .notification-background:active {
+  box-shadow: inset 0 0 0 1px #bcc0cc;
+  background-color: #209fb5;
+  color: #4c4f69;
+}
+
+.notification {
+  background-color: green;
+  color: red;
+}
+
+.control-center .notification {
+  background-color: blue;
+}
+
+.widget-dnd {
+  margin: 0px;
+  font-size: 1.1rem;
+  color: yellow;
+}
+
+.widget-dnd > switch {
+  font-size: initial;
+  border-radius: 8px;
+  background: #ccd0da;
+  border: 1px solid #bcc0cc;
+  box-shadow: none;
+}
+
+.image {
+  padding-right: 0.5rem;
+}
+*/
