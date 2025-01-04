@@ -13,7 +13,7 @@
           "bottom": 200,
           "top": 200
         },
-        "orientation": "horizontal",
+        "orientation": "vertical",
         "scroll": {
           "list": {
             "always_show": true,
@@ -34,10 +34,7 @@
                 "revert": true
               }
             },
-            "max_height": 400,
-            "max_width": 400,
-            "min_width": 400,
-            "width": 400
+            "max_height": 400
           },
           "overlay_scrolling": false
         },
