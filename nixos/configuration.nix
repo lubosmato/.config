@@ -64,7 +64,10 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Hyprland
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   services.xserver.displayManager.gdm.wayland = true;  
   
@@ -94,6 +97,8 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
+
+    wireplumber.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -168,6 +173,8 @@
     qt6.qtwayland
     qt5.qtwayland
     waybar
+    hyprshot
+    pavucontrol # sound config UI
 
     # dev
     nodejs_22
