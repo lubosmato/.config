@@ -123,7 +123,7 @@
     "history": true,
     "placeholder": "Search..."
   },
-  "theme": "catppuccin",
+  "theme": "glassy",
   "plugins": [
     {
       "name": "nvim",
