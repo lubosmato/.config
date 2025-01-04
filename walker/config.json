@@ -1,4 +1,7 @@
 {
+  "disabled": [
+    "runner"
+  ],
   "activation_mode": {
     "labels": "jklů",
     "use_alt": true
