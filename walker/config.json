@@ -10,7 +10,6 @@
   "as_window": false,
   "builtins": {
     "applications": {
-      "actions": true,
       "context_aware": true,
       "name": "applications",
       "placeholder": "Applications",

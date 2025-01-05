@@ -42,7 +42,9 @@ slider {
   opacity: 0.5;
 }
 
-#search {}
+#search {
+  color: white;
+}
 
 #password,
 #input,
@@ -58,17 +60,6 @@ slider {
 
 #input {
   background: none;
-}
-
-#input>*:first-child,
-#typeahead>*:first-child {
-  color: #808080;
-  margin-right: 7px;
-}
-
-#input>*:last-child,
-#typeahead>*:last-child {
-  color: #808080;
 }
 
 #spinner {}
