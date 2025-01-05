@@ -1,3 +1,7 @@
+/* NOTE: gtk "devtools": GTK_DEBUG=interactive swaync
+e.g. with watchexec: nix run nixpkgs#watchexec -- -e json,css -r --env GTK_DEBUG=interactive swaync
+*/
+
 * {
   all: unset;
   font-size: 16px;
@@ -7,7 +11,7 @@
 
 .control-center {
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.2);
 
@@ -28,7 +32,7 @@
 .notification {
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   padding: 1rem;
@@ -36,7 +40,15 @@
 }
 
 .image {
-  padding-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  -gtk-icon-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.app-icon {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  -gtk-icon-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 button.close-button {
@@ -66,6 +78,7 @@ button.close-button:hover {
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: none;
+  margin-right: 7px;
 }
 
 .widget-dnd>switch:checked {
@@ -86,9 +99,12 @@ button {
   padding: 0.5rem;
   margin: 0.5rem;
 
-  border-radius: 100%;
   background: rgba(255, 255, 255, 0.8);
   color: black;
+}
+
+.circular {
+  border-radius: 100%;
 }
 
 button:hover {
@@ -99,7 +115,59 @@ button:hover {
   margin-bottom: 0.5rem;
 }
 
-.control-center .widget-title button {
-  border-radius: 6px;
-  padding: 0 0.6rem;
+.overlay-indicator {
+  min-height: 3.5rem;
+  font-size: 1rem;
+}
+
+.frame {
+  margin-top: 1rem;
+}
+
+.frame buttonbox button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.8rem;
+}
+
+.frame buttonbox button:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.frame buttonbox button:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.frame buttonbox button:first-child:last-child {
+  border-radius: 10px;
+}
+
+.frame buttonbox button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.notification-action {
+  margin: 0;
+  padding: 0;
+}
+
+.notification-content .vertical.text-box {
+  margin-left: 1rem;
+}
+
+.summary {
+  font-weight: bolder;
+}
+
+.notification-group-icon {
+  margin-right: 0.5rem;
+}
+
+.body {
+  min-height: 1rem;
+}
+
+.control-center-clear-all {
+  border-radius: 10px;
+  padding: 0.25rem 0.75rem;
 }
