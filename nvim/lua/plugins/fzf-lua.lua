@@ -4,10 +4,9 @@ return {
     opts = {
       keymap = {
         fzf = {
-          -- TODO: tab for switching does not work (sometimes)
-          -- ["<Tab>"] = "next",
-          -- ["<S-Tab>"] = "prev",
-          -- ["ctrl-j"] = "next",
+          ["ctrl-q"] = "select-all+accept",
+          ["tab"] = "down",
+          ["shift-tab"] = "up",
         },
       },
     },
