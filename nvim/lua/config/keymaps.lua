@@ -12,6 +12,21 @@ vim.g.copilot_no_tab_map = true
 map("n", "<leader>fl", "<cmd>FzfLua resume<cr>", { noremap = true, silent = true, desc = "Resume FzfLua" })
 map("n", "<leader>fa", "<cmd>FzfLua<cr>", { noremap = true, silent = true, desc = "Find anything" })
 
+-- console.log
+map(
+  "n",
+  "<leader>cp",
+  "yiwo<esc>iconsole.log({ <esc>pa })<esc>:w<cr>",
+  { noremap = true, silent = true, desc = "Put current word into console.log" }
+)
+
+map(
+  "v",
+  "<leader>cp",
+  "yo<esc>iconsole.log({ <esc>pa })<esc>:w<cr>",
+  { noremap = true, silent = true, desc = "Put selection into console.log" }
+)
+
 local fzf_cword = function()
   local word = vim.fn.expand("<cword>")
   require("fzf-lua").grep({ search = word })

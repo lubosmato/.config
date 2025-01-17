@@ -253,19 +253,6 @@ return {
       end
 
       if vim.fn.has("nvim-0.10") == 1 then
-        -- inlay hints
-        if opts.inlay_hints.enabled then
-          LazyVim.lsp.on_supports_method("textDocument/inlayHint", function(client, buffer)
-            if
-              vim.api.nvim_buf_is_valid(buffer)
-              and vim.bo[buffer].buftype == ""
-              and not vim.tbl_contains(opts.inlay_hints.exclude, vim.bo[buffer].filetype)
-            then
-              LazyVim.toggle.inlay_hints(buffer, true)
-            end
-          end)
-        end
-
         -- code lens
         if opts.codelens.enabled and vim.lsp.codelens then
           LazyVim.lsp.on_supports_method("textDocument/codeLens", function(client, buffer)
