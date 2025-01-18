@@ -35,3 +35,5 @@ end
 
 map("n", "<leader>*", fzf_cword, { noremap = true, silent = true, desc = "Grep word under cursor" })
 map("n", "<leader>#", fzf_cword, { noremap = true, silent = true, desc = "Grep word under cursor" })
+
+map("t", "<esc><esc>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit terminal mode" })
