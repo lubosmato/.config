@@ -1,5 +1,13 @@
 return {
-  { "lubosmato/vim-moonfly2-colors", name = "moonfly2", lazy = false },
+  {
+    "lubosmato/vim-moonfly2-colors",
+
+    -- opts = {
+    --   on_colors = function(colors)
+    --     colors.floats = "#000000"
+    --   end,
+    -- },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
