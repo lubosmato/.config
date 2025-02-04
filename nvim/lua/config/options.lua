@@ -4,3 +4,4 @@
 
 vim.g.snacks_animate = false
 
+vim.filetype.add({ filename = { Podfile = "ruby" } })
