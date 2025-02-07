@@ -4,6 +4,7 @@ return {
 
     keys = {
       { "<leader><space>", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
+      { "<leader><c-space>", LazyVim.pick("files", { root = true }), desc = "Find Files (current project)" },
     },
     opts = function(_, opts)
       local actions = require("fzf-lua").actions
