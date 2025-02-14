@@ -8,12 +8,10 @@ return {
     },
     ---@class PluginLspOpts
     opts = function()
-      local util = require("lspconfig.util")
-
       local function get_typescript_server_path()
-        local cwd = util.path.join(vim.fn.getcwd())
-        local project_root = util.find_node_modules_ancestor(cwd)
-        return project_root and (util.path.join(project_root, "node_modules", "typescript", "lib")) or ""
+        local cwd = vim.fn.getcwd()
+        local project_root = vim.fs.dirname(vim.fs.find("node_modules", { path = cwd, upward = true })[1])
+        return project_root and (vim.fs.joinpath(project_root, "node_modules", "typescript", "lib")) or ""
       end
 
       return {
@@ -340,6 +338,7 @@ return {
             LazyVim.opts("mason-lspconfig.nvim").ensure_installed or {}
           ),
           handlers = { setup },
+          automatic_installation = true,
         })
       end
 

@@ -30,6 +30,7 @@ return {
         "taplo",
         "vtsls",
         "eslint-lsp",
+        "biome",
       },
     },
   },
