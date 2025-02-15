@@ -37,6 +37,7 @@ return {
         "xml",
         "yaml",
         "hyprlang",
+        "hurl",
       },
     },
   },
