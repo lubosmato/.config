@@ -37,3 +37,11 @@ map("n", "<leader>*", fzf_cword, { noremap = true, silent = true, desc = "Grep w
 map("n", "<leader>#", fzf_cword, { noremap = true, silent = true, desc = "Grep word under cursor" })
 
 map("t", "<esc><esc>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit terminal mode" })
+
+map("n", "gsd", function()
+  vim.cmd("vsplit")
+  require("fzf-lua").lsp_definitions({
+    jump_to_single_result = true,
+    ignore_current_line = true,
+  })
+end, { noremap = true, silent = true, desc = "Go to definition open in new buf" })
