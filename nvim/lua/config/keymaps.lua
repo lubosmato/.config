@@ -41,7 +41,7 @@ map("t", "<esc><esc>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "E
 map("n", "gsd", function()
   vim.cmd("vsplit")
   require("fzf-lua").lsp_definitions({
-    jump_to_single_result = true,
+    jump1 = true,
     ignore_current_line = true,
   })
 end, { noremap = true, silent = true, desc = "Go to definition open in new buf" })
