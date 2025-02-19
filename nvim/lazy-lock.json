@@ -3,7 +3,7 @@
   "LazyVim": { "branch": "main", "commit": "3f034d0a7f58031123300309f2efd3bb0356ee21" },
   "auto-save.nvim": { "branch": "main", "commit": "29f793a3a7f98129387590269ffe3ad61ab5e509" },
   "auto-session": { "branch": "main", "commit": "9c3f977aafb56bd73ba0d082c4dcbdba5666faf3" },
-  "avante.nvim": { "branch": "main", "commit": "a17d4b00e209eddbd7f847a30f56d1a180c2fafd" },
+  "avante.nvim": { "branch": "main", "commit": "82bf18147ea4a236abd872f7b1b9acd28f711f31" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
   "blink.cmp": { "branch": "main", "commit": "4043b0e1508a58c659235987029d0ba4c6089345" },
   "boole.nvim": { "branch": "main", "commit": "7b4a3dae28e3b2497747aa840439e9493cabdc49" },
