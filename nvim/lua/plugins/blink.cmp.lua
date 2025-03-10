@@ -3,7 +3,6 @@ return {
     "saghen/blink.cmp",
     version = false,
     opts = {
-
       enabled = function()
         local disabled = false
         disabled = disabled or (vim.tbl_contains({ "markdown" }, vim.bo.filetype))
