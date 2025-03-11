@@ -2,6 +2,7 @@ return {
   {
     -- requires manually installing LSP (not available in Mason)
     "cordx56/rustowl",
+    enabled = false,
     config = function()
       vim.api.nvim_set_hl(0, "lifetime", { underdouble = true, background = "#003c00", sp = "#00cc00" })
       vim.api.nvim_set_hl(0, "imm_borrow", { underdouble = true, background = "#00005c", sp = "#0000cc" })
