@@ -7,6 +7,12 @@ return {
           filtered_items = {
             hide_dotfiles = false,
           },
+          window = {
+            mappings = {
+              -- disable fuzzy finder
+              ["/"] = "noop",
+            },
+          },
         },
       })
     end,
