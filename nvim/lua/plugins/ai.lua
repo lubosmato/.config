@@ -1,7 +1,10 @@
 return {
-  { "giuxtaposition/blink-cmp-copilot" },
+  {
+    "giuxtaposition/blink-cmp-copilot",
+  },
   {
     "zbirenbaum/copilot.lua",
+    enabled = false,
     event = "VeryLazy",
     opts = {
       suggestion = {

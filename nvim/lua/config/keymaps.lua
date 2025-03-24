@@ -11,17 +11,24 @@ map("n", "<leader>fa", "<cmd>FzfLua<cr>", { noremap = true, silent = true, desc 
 -- console.log
 map(
   "n",
-  "<leader>cp",
+  "<leader>cc",
   "yiwo<esc>iconsole.log({ <esc>pa })<esc>:w<cr>",
   { noremap = true, silent = true, desc = "Put current word into console.log" }
 )
 
 map(
   "v",
-  "<leader>cp",
+  "<leader>cc",
   "yo<esc>iconsole.log({ <esc>pa })<esc>:w<cr>",
   { noremap = true, silent = true, desc = "Put selection into console.log" }
 )
+
+map("n", "<leader>cp", function()
+  local cwd = vim.fn.expand("%:p")
+  local package_json = vim.fs.find("package.json", { path = cwd, upward = true })[1]
+  vim.notify(package_json)
+  vim.cmd.edit(package_json)
+end, { noremap = true, silent = true, desc = "Show closest package.json relative to current buffer" })
 
 local fzf_cword = function()
   local word = vim.fn.expand("<cword>")
