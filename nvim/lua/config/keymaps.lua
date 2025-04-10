@@ -48,3 +48,10 @@ map("n", "gsd", function()
     ignore_current_line = true,
   })
 end, { noremap = true, silent = true, desc = "Go to definition open in new buf" })
+
+map(
+  "n",
+  "<leader>gC",
+  require("fzf-lua").git_bcommits,
+  { noremap = true, silent = true, desc = "Git commits (buffer)" }
+)
