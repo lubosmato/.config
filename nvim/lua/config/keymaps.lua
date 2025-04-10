@@ -49,9 +49,6 @@ map("n", "gsd", function()
   })
 end, { noremap = true, silent = true, desc = "Go to definition open in new buf" })
 
-map(
-  "n",
-  "<leader>gC",
-  require("fzf-lua").git_bcommits,
-  { noremap = true, silent = true, desc = "Git commits (buffer)" }
-)
+map("n", "<leader>gC", function()
+  require("fzf-lua").git_bcommits()
+end, { noremap = true, silent = true, desc = "Git commits (buffer)" })
