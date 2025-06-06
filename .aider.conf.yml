@@ -1,0 +1,6 @@
+read:
+  - .cursor/rules/
+auto-commits: false
+analytics-disable: true
+code-theme: dark
+
