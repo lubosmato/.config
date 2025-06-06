@@ -9,9 +9,9 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
-        solargraph = {
-          enabled = false,
-        },
+        -- solargraph = {
+        --   enabled = false,
+        -- },
         ruby_lsp = {
           enabled = true,
           cmd = { os.getenv("HOME") .. "/.local/share/mise/shims/ruby-lsp" },
