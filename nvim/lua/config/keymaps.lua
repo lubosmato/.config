@@ -52,3 +52,9 @@ end, { noremap = true, silent = true, desc = "Go to definition open in new buf" 
 map("n", "<leader>gC", function()
   require("fzf-lua").git_bcommits()
 end, { noremap = true, silent = true, desc = "Git commits (buffer)" })
+
+map("n", "csqq", function()
+  vim.cmd("normal csq`ysaq{")
+end, { noremap = true, silent = true, desc = "Change quotes to JSX backtick value" })
+
+-- TODO: visual select, paste, dot repeat => repeat actual change
