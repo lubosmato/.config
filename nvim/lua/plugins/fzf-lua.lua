@@ -10,6 +10,11 @@ return {
       local actions = require("fzf-lua").actions
 
       return vim.tbl_deep_extend("force", opts or {}, {
+        files = {
+          hidden = true,
+          follow = true,
+          no_ignore = false,
+        },
         keymap = {
           fzf = {
             ["ctrl-q"] = "select-all+accept",

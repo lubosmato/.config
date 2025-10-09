@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 local map = vim.keymap.set
 
-map("n", "<leader>fs", "<cmd>SessionSearch<cr>", { noremap = true, silent = true, desc = "Sessions" })
+map("n", "<leader>fs", "<cmd>AutoSession search<cr>", { noremap = true, silent = true, desc = "Sessions" })
 
 map("n", "<leader>fl", "<cmd>FzfLua resume<cr>", { noremap = true, silent = true, desc = "Resume FzfLua" })
 map("n", "<leader>fa", "<cmd>FzfLua<cr>", { noremap = true, silent = true, desc = "Find anything" })

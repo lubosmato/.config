@@ -3,8 +3,8 @@ return {
     "neovim/nvim-lspconfig",
     event = "LazyFile",
     dependencies = {
-      "mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      { "mason-org/mason.nvim", version = "^1.0.0" },
+      { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
     },
     ---@class PluginLspOpts
     opts = function()
@@ -342,16 +342,17 @@ return {
         })
       end
 
-      if LazyVim.lsp.is_enabled("denols") and LazyVim.lsp.is_enabled("vtsls") then
-        local is_deno = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
-        LazyVim.lsp.disable("vtsls", is_deno)
-        LazyVim.lsp.disable("denols", function(root_dir, config)
-          if not is_deno(root_dir) then
-            config.settings.deno.enable = false
-          end
-          return false
-        end)
-      end
+      -- TODO: revisit this if we have issues with tsserver and denols
+      -- if LazyVim.lsp.is_enabled("denols") and LazyVim.lsp.is_enabled("vtsls") then
+      --   local is_deno = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
+      --   LazyVim.lsp.disable("vtsls", is_deno)
+      --   LazyVim.lsp.disable("denols", function(root_dir, config)
+      --     if not is_deno(root_dir) then
+      --       config.settings.deno.enable = false
+      --     end
+      --     return false
+      --   end)
+      -- end
     end,
   },
 }
