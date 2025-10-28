@@ -143,6 +143,33 @@ return {
               { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File", mode ={"n"}, has = { "workspace/didRenameFiles", "workspace/willRenameFiles" } },
               { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
               { "<leader>cA", LazyVim.lsp.action.source, desc = "Source Action", has = "codeAction" },
+              {
+                "<leader>co",
+                LazyVim.lsp.action["source.organizeImports"],
+                desc = "Organize Imports",
+              },
+              {
+                "<leader>cM",
+                LazyVim.lsp.action["source.addMissingImports.ts"],
+                desc = "Add missing imports",
+              },
+              {
+                "<leader>cu",
+                LazyVim.lsp.action["source.removeUnused.ts"],
+                desc = "Remove unused imports",
+              },
+              {
+                "<leader>cD",
+                LazyVim.lsp.action["source.fixAll.ts"],
+                desc = "Fix all diagnostics",
+              },
+              {
+                "<leader>cV",
+                function()
+                  LazyVim.lsp.execute({ command = "typescript.selectTypeScriptVersion" })
+                end,
+                desc = "Select TS workspace version",
+              },
               { "]]", function() Snacks.words.jump(vim.v.count1) end, has = "documentHighlight",
                 desc = "Next Reference", enabled = function() return Snacks.words.is_enabled() end },
               { "[[", function() Snacks.words.jump(-vim.v.count1) end, has = "documentHighlight",
