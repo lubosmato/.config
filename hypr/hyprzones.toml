@@ -1,0 +1,57 @@
+[[layouts]]
+name = "development"
+spacing_h = 5
+spacing_v = 5
+
+[[layouts.zones]]
+name = "Zone 6"
+x = 0
+y = 0
+width = 32
+height = 46.8
+
+[[layouts.zones]]
+name = "Zone 7"
+x = 0
+y = 46.8
+width = 24.5
+height = 53.2
+
+[[layouts.zones]]
+name = "Zone 9"
+x = 32
+y = 0
+width = 36.2
+height = 46.8
+
+[[layouts.zones]]
+name = "Zone 10"
+x = 74.6
+y = 46.8
+width = 25.4
+height = 53.2
+
+[[layouts.zones]]
+name = "Zone 11"
+x = 24.5
+y = 46.8
+width = 50.1
+height = 53.2
+
+[[layouts.zones]]
+name = "Zone 12"
+x = 68.2
+y = 0
+width = 31.8
+height = 46.8
+
+# Monitor/Workspace to Layout mappings
+[[mappings]]
+monitor = "HDMI-A-1"
+workspaces = "1-5"
+layout = "development"
+
+[[mappings]]
+monitor = "*"
+workspaces = "*"
+layout = "development"

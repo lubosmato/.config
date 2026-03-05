@@ -1,148 +1,132 @@
+/* 全局设置 */
 * {
+  font-family: "FiraCode Nerd Font";
+  font-weight: bold;
   font-size: 16px;
-  font-family: "Overpass Nerd Font Propo, Thin";
+  color: #dcdfe1;
 }
 
-@define-color primary rgb(255, 255, 255);
-@define-color dark rgb(0, 0, 0);
-
-@define-color bg alpha(@primary, 0.03);
-@define-color box-shadow rgba(0, 0, 0, 0.2);
-
-window#waybar {
-  all: unset;
+/* 透明 Waybar 背景 */
+#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
 }
 
-button {
-  all: unset;
-}
-
-.modules-left,
-.modules-center,
-.modules-right {
-  padding: 4px;
-  margin: 4px;
-
+/* 所有模块统一风格 */
+#workspaces,
+#window,
+#tray {
+  /*background-color: rgba(29,31,46, 0.95);*/
+  background-color: rgba(15, 27, 53, 0.9);
+  padding: 4px 6px;
+  /* 保持内部间距 */
+  margin-top: 6px;
+  /* 外部间距增加 */
+  margin-left: 6px;
+  /* 外部间距增加 */
+  margin-right: 6px;
+  /* 外部间距增加 */
   border-radius: 10px;
-  background: @bg;
-  box-shadow: 0px 0px 2px @box-shadow;
-  border: 1px solid alpha(@primary, 0.03);
+  border-width: 0px;
 }
 
-.modules-left {
-  margin-left: 14px;
-}
-
-.modules-right {
-  margin-right: 14px;
-}
-
-.modules-right * {
-  font-size: 18px;
-}
-
-#custom-notification,
 #clock,
-#custom-pacman,
-#bluetooth,
+#custom-power {
+  background-color: rgba(15, 27, 53, 0.9);
+  margin-top: 6px;
+  /* 与屏幕顶部留出距离 */
+  margin-right: 6px;
+  /*margin-bottom: 4px;*/
+  padding: 4px 2px;
+  /* 保持内部间距 */
+  border-radius: 0 10px 10px 0;
+  border-width: 0px;
+}
+
 #network,
-#battery,
-#group-expand,
-#custom-expand,
-#custom-colorpicker,
-#cpu,
-#memory,
-#temperature {
-  padding: 0 13px;
+#custom-lock {
+  background-color: rgba(15, 27, 53, 0.9);
+  margin-top: 6px;
+  /* 与屏幕顶部留出距离 */
+  margin-left: 6px;
+  /*margin-bottom: 4px;*/
+  padding: 4px 2px;
+  /* 保持内部间距 */
+  border-radius: 10px 0 0 10px;
+  border-width: 0px;
 }
 
-#workspaces button,
-#clock,
-#custom-pacman,
-#custom-notification,
+#custom-reboot,
 #bluetooth,
-#network,
 #battery,
-#cpu,
+#pulseaudio,
+#backlight,
+#custom-temperature,
 #memory,
-#temperature {
-  transition: all 0.2s ease;
-  border-radius: 5px;
+#cpu {
+  background-color: rgba(15, 27, 53, 0.9);
+  margin-top: 6px;
+  /* 与屏幕顶部留出距离 */
+  /*margin-bottom: 4px;*/
+  padding: 4px 2px;
+  /* 保持内部间距 */
+  border-width: 0px;
 }
 
-tooltip {
-  background: alpha(@dark, 0.95);
-  border-radius: 10px;
-  box-shadow: 0px 0px 2px @box-shadow;
-  border: 1px solid alpha(@primary, 0.15);
+#custpm-temperature.critical,
+#pulseaudio.muted {
+  color: #FF0000;
+  padding-top: 0;
 }
 
-#clock:hover,
-#custom-pacman:hover,
-#custom-notification:hover,
+/* 鼠标悬停变亮一点 */
 #bluetooth:hover,
 #network:hover,
+/*#tray:hover,*/
+#backlight:hover,
 #battery:hover,
-#cpu:hover,
+#pulseaudio:hover,
+#custom-temperature:hover,
 #memory:hover,
-#temperature:hover {
-  color: alpha(@primary, 1.0);
-  background: alpha(@primary, 0.03);
+#cpu:hover,
+#clock:hover,
+#custom-lock:hover,
+#custom-reboot:hover,
+#custom-power:hover,
+/*#workspaces:hover,*/
+#window:hover {
+  background-color: rgba(70, 75, 90, 0.9);
 }
 
-#workspaces,
-#workspaces button,
-#tray,
-#tray menu *,
-#tray menu separator {
-  padding: 0 10px;
-}
-
-#workspaces button {
-  color: transparent;
-  text-shadow: 0px 0px 1px alpha(@dark, 0.5);
-}
-
+/* 工作区激活状态高亮 */
 #workspaces button:hover {
-  text-shadow: 0px 0px 1px alpha(@dark, 0.7);
+  background-color: rgba(97, 175, 239, 0.2);
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 10px;
 }
 
 #workspaces button.active {
-  color: alpha(@primary, 0.9);
+  background-color: #61afef;
+  /* 蓝色高亮 */
+  color: #ffffff;
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 10px;
+}
+
+/* 未激活工作区按钮 */
+#workspaces button {
+  background: transparent;
   border: none;
+  color: #888888;
+  padding: 2px 8px;
+  margin: 0 2px;
+  font-weight: bold;
 }
 
-#workspaces button.empty {
-  color: transparent;
-  border: none;
-  text-shadow: 0px 0px 1.5px alpha(@dark, 0.2);
+#window {
+  font-weight: 500;
+  font-style: italic;
 }
-
-#workspaces button.empty:hover {
-  color: transparent;
-  border: none;
-  text-shadow: 0px 0px 1.5px alpha(@dark, 0.5);
-}
-
-#workspaces button.empty.active {
-  color: alpha(@primary, 0.5);
-  border: none;
-}
-
-#battery.charging {
-  color: #26A65B;
-}
-
-#battery.warning:not(.charging) {
-  color: #ffbe61;
-}
-
-#battery.critical:not(.charging) {
-  color: #f53c3c;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
