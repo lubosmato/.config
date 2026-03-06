@@ -45,12 +45,6 @@ y = 0
 width = 31.8
 height = 46.8
 
-# Monitor/Workspace to Layout mappings
-[[mappings]]
-monitor = "HDMI-A-1"
-workspaces = "1-5"
-layout = "development"
-
 [[mappings]]
 monitor = "*"
 workspaces = "*"
