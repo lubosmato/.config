@@ -57,4 +57,17 @@ map("n", "csqq", function()
   vim.cmd("normal csq`ysaq{")
 end, { noremap = true, silent = true, desc = "Change quotes to JSX backtick value" })
 
+map("n", "csqcn", function()
+  vim.cmd("normal ysaq{ysaq(icn\27%i, className")
+end, { noremap = true, silent = true, desc = 'Change className="..." into className={cn("...", className)' })
+
+map(
+  "n",
+  "<leader>cj",
+  "i<lt>pre>{JSON.stringify(, null, 2)}<lt>/pre><CR><esc>k0f(a",
+  { noremap = true, silent = true, desc = "Print pretty json in jsx" }
+)
+
 -- TODO: visual select, paste, dot repeat => repeat actual change
+
+map("n", "<leader>o", ":!open %:p<CR>", { desc = "Open file with macOS open" })
