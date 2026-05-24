@@ -1,7 +1,7 @@
 [[layouts]]
 name = "development"
-spacing_h = 5
-spacing_v = 5
+spacing_h = 10
+spacing_v = 10
 
 [[layouts.zones]]
 name = "Zone 6"
