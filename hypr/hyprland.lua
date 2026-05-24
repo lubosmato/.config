@@ -325,6 +325,14 @@ hl.layer_rule({
 	ignore_alpha = 0,
 })
 
+-- Dunst notifications blur layer rule
+hl.layer_rule({
+	name = "dunst-blur",
+	match = { namespace = "notifications" },
+	blur = true,
+	ignore_alpha = 0.2,
+})
+
 -- Float windows on workspace 2
 hl.window_rule({
 	name = "float-on-workspace-2",
