@@ -197,6 +197,13 @@ hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
 
+-- Resize active window with mainMod + arrows (up/left increase, down/right decrease)
+local resizeStep = 30
+hl.bind(mainMod .. " + up", hl.dsp.window.resize({ x = 0, y = -resizeStep, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + down", hl.dsp.window.resize({ x = 0, y = resizeStep, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + left", hl.dsp.window.resize({ x = -resizeStep, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + right", hl.dsp.window.resize({ x = resizeStep, y = 0, relative = true }), { repeating = true })
+
 -- Switch workspaces with mainMod + Czech number row keys
 hl.bind(mainMod .. " + plus", hl.dsp.focus({ workspace = 1 }))
 hl.bind(mainMod .. " + ecaron", hl.dsp.focus({ workspace = 2 }))
