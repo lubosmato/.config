@@ -71,3 +71,4 @@ map(
 -- TODO: visual select, paste, dot repeat => repeat actual change
 
 map("n", "<leader>o", ":!open %:p<CR>", { desc = "Open file with macOS open" })
+map("n", "<leader>ac", "<C-w>v|:term claude<CR>i", { desc = "Open claude in split window" })
