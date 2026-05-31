@@ -1,7 +1,0 @@
-read:
-  - .cursor/rules/
-  - CLAUDE.md
-  - CONVENTIONS.md
-auto-commits: false
-analytics-disable: true
-code-theme: one-dark
