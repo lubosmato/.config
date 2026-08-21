@@ -159,7 +159,7 @@ hl.config({
 			natural_scroll = false,
 		},
 
-		accel_profile = "custom 0.1523707701 0.000 0.040 0.079 0.119 0.159 0.214 0.274 0.333 0.393 0.453 0.512 0.572 0.632 0.713 0.804 0.894 0.985 1.076 1.167 1.257 1.348 1.439 1.529 1.620 1.711 1.801 1.892 1.983 2.074 2.164 2.255 2.346 2.436 2.527 2.618 2.708 2.799 2.890 2.981 3.168",
+		accel_profile = "custom 0.1523707701 0.000 0.056 0.111 0.167 0.222 0.299 0.383 0.467 0.550 0.634 0.717 0.801 0.885 0.998 1.125 1.252 1.379 1.506 1.633 1.760 1.887 2.014 2.141 2.268 2.395 2.522 2.649 2.776 2.903 3.030 3.157 3.284 3.411 3.538 3.665 3.792 3.919 4.046 4.173 4.435",
 	},
 })
 
@@ -272,7 +272,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 -- Vicinae launcher
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("vicinae toggle"))
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("vicinae deeplink vicinae://extensions/vicinae/clipboard/history"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("vicinae deeplink vicinae://launch/clipboard/history"))
 
 -- Screenshots (hyprshot)
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m window"))

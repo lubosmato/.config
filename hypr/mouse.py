@@ -8,7 +8,7 @@ screen_scaling_factor = 1
 sample_point_count = (
     40  # should be enough but you can try to increase for accuracy of windows function
 )
-sensitivity_factor = 1.0
+sensitivity_factor = 1.4
 # sensitivity factor translation table: (windows slider notches)
 # 1 = 0.1
 # 2 = 0.2
@@ -142,5 +142,5 @@ print(f'\tOption "AccelStepMotion" "{step:0.10f}"')
 
 print()
 print(
-    f"accel_profile = custom {step:0.10f} {' '.join(['%.3f' % number for number in sample_points_y])}"
+    f'accel_profile = "custom {step:0.10f} {" ".join(["%.3f" % number for number in sample_points_y])}"'
 )
