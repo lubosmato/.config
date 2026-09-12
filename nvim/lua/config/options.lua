@@ -15,3 +15,7 @@ vim.g.lazyvim_prettier_needs_config = false
 vim.g.lazyvim_blink_main = true
 
 vim.g.lazyvim_picker = "fzf"
+
+-- Set terminal window title to "nvim <cwd folder name>" (Ghostty forwards it to the OS window title)
+vim.o.title = true
+vim.o.titlestring = "nvim %{fnamemodify(getcwd(), ':h:t')}/%{fnamemodify(getcwd(), ':t')}"
