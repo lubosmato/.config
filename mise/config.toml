@@ -1,10 +1,6 @@
 [tools]
-node = '22'
+node = '26'
 python = '3'
-ruby = '3'
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "ruby"]
-
-[settings.ruby]
-default_packages_file = "~/.config/mise/default-gems"
