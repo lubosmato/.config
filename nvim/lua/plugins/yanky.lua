@@ -6,6 +6,9 @@ return {
     event = "LazyFile",
     opts = {
       highlight = { timer = 150 },
+      -- Over SSH, reading the clipboard goes through OSC 52, and the terminal
+      -- prompts on every focus change. Paste with the terminal there instead.
+      system_clipboard = { sync_with_ring = not vim.env.SSH_CONNECTION },
     },
     keys = {
       {
