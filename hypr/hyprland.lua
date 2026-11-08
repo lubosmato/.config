@@ -157,6 +157,13 @@ hl.config({
 	},
 })
 
+-- Hide the cursor when the mouse is idle, e.g. while playing with a controller.
+hl.config({
+	cursor = {
+		inactive_timeout = 3,
+	},
+})
+
 hl.gesture({
 	fingers = 3,
 	direction = "horizontal",
