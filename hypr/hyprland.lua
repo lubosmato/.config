@@ -16,7 +16,7 @@ hl.monitor({
 ---- MY PROGRAMS ----
 ---------------------
 
-local terminal = "kitty"
+local terminal = "ghostty"
 local fileManager = "nautilus"
 local menu = "vicinae toggle"
 
@@ -37,12 +37,6 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-
------------------------
------ PERMISSIONS -----
------------------------
-
-hl.permission({ binary = "/usr/(bin|local/bin)/hyprpm", type = "plugin", mode = "allow" })
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -261,8 +255,6 @@ hl.bind(
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })

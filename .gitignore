@@ -2,7 +2,7 @@
 !.gitignore
 !nvim
 !karabiner
-!kitty
+!ghostty
 !zellij
 !hypr
 !nixos
@@ -16,3 +16,5 @@
 !.aider.conf.yml
 !apps.txt
 !dunst
+# Machine-local overrides, not tracked.
+ghostty/linux-overrides

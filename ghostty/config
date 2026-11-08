@@ -1,0 +1,20 @@
+theme = Kitty Default
+
+font-family = "FiraCode Nerd Font Mono"
+font-size = 12
+font-thicken = true
+
+cursor-style = bar
+
+scrollback-limit = 100000000
+
+keybind = super+y=copy_to_clipboard
+keybind = shift+super+l=next_tab
+keybind = shift+super+h=previous_tab
+keybind = super+t=new_tab
+keybind = super+enter=new_window
+
+adjust-cell-height = +20%
+
+# Optional machine-local overrides.
+config-file = ?linux-overrides

@@ -122,7 +122,7 @@
     "tooltip-format": "当前系统声音: {volume}%"
   },
   "custom/temperature": {
-    "exec": "sensors | awk '/^Package id 0:/ {print int($4)}'",
+    "exec": "sensors | awk '/^Tctl:/ {print int($2)}'",
     "format": "<span color='#FFA500'> </span>{}°C ",
     "interval": 5,
     "tooltip": true,
