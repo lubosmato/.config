@@ -4,3 +4,4 @@ python = '3'
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "ruby"]
+all_compile = false
