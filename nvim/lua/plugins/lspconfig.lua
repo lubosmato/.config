@@ -7,7 +7,7 @@ return {
       { "mason-org/mason-lspconfig.nvim", config = function() end },
     },
     opts_extend = { "servers.*.keys" },
-    opts = function()
+    opts = function(_, opts)
       ---@class PluginLspOpts
       local ret = {
         -- options for vim.diagnostic.config()
@@ -226,6 +226,12 @@ return {
           -- ["*"] = function(server, opts) end,
         },
       }
+      -- This function replaces the opts merged so far, so carry over servers/setup
+      -- added by LazyVim extras. Without it `rust_analyzer = { enabled = false }` from
+      -- the lang.rust extra is lost and mason-lspconfig starts rust_analyzer next to
+      -- rustaceanvim's rust-analyzer (two servers on every Rust buffer).
+      ret.servers = vim.tbl_deep_extend("keep", ret.servers, opts.servers or {})
+      ret.setup = vim.tbl_deep_extend("keep", ret.setup, opts.setup or {})
       return ret
     end,
     ---@param opts PluginLspOpts
