@@ -19,3 +19,6 @@ vim.g.lazyvim_picker = "fzf"
 -- Set terminal window title to "nvim <cwd folder name>" (Ghostty forwards it to the OS window title)
 vim.o.title = true
 vim.o.titlestring = "nvim %{fnamemodify(getcwd(), ':h:t')}/%{fnamemodify(getcwd(), ':t')}"
+
+-- Load project-local .nvim.lua (asks to :trust on first use)
+vim.o.exrc = true
