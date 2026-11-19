@@ -361,8 +361,7 @@
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
-                                        "mandatory": ["option"],
-                                        "optional": ["any"]
+                                        "mandatory": ["option"]
                                     }
                                 },
                                 "to": [{ "key_code": "non_us_backslash" }],
