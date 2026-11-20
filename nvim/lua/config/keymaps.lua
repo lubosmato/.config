@@ -72,3 +72,6 @@ map(
 
 map("n", "<leader>o", ":!open %:p<CR>", { desc = "Open file with macOS open" })
 map("n", "<leader>ac", "<C-w>v|:term claude<CR>i", { desc = "Open claude in split window" })
+
+map("n", "<C-f>", "]m", { desc = "Alias to next ]m" })
+map("n", "<C-S-f>", "[m", { desc = "Alias to next [m" })
